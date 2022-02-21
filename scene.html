@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+ <script src="./components/Rotation.js"></script>
+ <script src="./components/Coin.js"></script>
+
+ </head>
+ <body>
+  <a-scene>
+    <a-camera position="0 0.7 1.5"></a-camera>
+
+   
+    <a-assets timeout="10000">
+    <a-asset-item id='island' src="./island/scene.gltf"></a-asset-item>
+    <a-asset-item id='diver' src="./diver/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <!--Island-->
+    <a-entity
+      id="oceanic-island"
+      gltf-model="#island"
+      position="0 0 0"
+      scale="0.3 0.3 0.3"
+      coin
+    >
+    </a-entity>
+
+    <!--Scuba Diver-->
+    <a-entity
+     gltf-model="#diver"
+     position="0.5 0.1 1"
+     rotation="0 90 -20"
+     scale = '0.1 0.1 0.1'
+     diver-rotation-reader
+    >
+    </a-entity>
+
+
+  </a-scene>
+ </body>
+</html>
